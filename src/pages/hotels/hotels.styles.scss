@@ -1,0 +1,16 @@
+.hotels {
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        &-item-img {
+           max-width: 100%; 
+        }
+
+         &-item-title {
+           font-weight: bold; 
+           margin: 10px 0;
+        }
+    }
+}

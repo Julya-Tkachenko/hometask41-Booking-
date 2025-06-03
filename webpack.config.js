@@ -4,6 +4,9 @@ const CssPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const webpack = require('webpack');
 
+const CopyPlugin = require("copy-webpack-plugin");
+ 
+
 module.exports = {
     mode: 'development',
     entry: './src/index.js',
@@ -22,6 +25,11 @@ module.exports = {
         new webpack.ProvidePlugin({
             Buffer: ['buffer', 'Buffer'],
             process: 'process/browser.js',
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: "static", to: "static" },
+            ],
         }),
     ],
     devServer: {
